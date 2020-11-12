@@ -160,7 +160,7 @@ class MixnetCase(APITestCase):
 '''
     def test_multiple_auths_mock(self):
         '''
-        This test emulates a two authorities shuffle and decryption.
+        'This test emulates a two authorities shuffle and decryption.'
         '''
 
         data = {
