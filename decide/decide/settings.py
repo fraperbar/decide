@@ -69,7 +69,7 @@ MODULES = [
     'visualizer',
     'voting',
 ]
-BASEURL = 'http://heroku-meet-travis.herokuapp.com'
+BASEURL = 'https://fraperbardecide.herokuapp.com'
 APIS = {
     'authentication': BASEURL,
     'base': BASEURL,
