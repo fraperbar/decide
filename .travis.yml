@@ -10,29 +10,29 @@ before_script:
 language: python
 python:
 - '3.6'
+- '3.7'
 install:
 - pip install -r requirements.txt
 script:
 - cd decide
 - cp travis_local_settings.py local_settings.py
 - coverage run --branch --source=. ./manage.py test --keepdb
-notificiacions:
+notifications:
   email:
     recipients:
-      - franperejonbarrios@gmail.com
       - fraperbar@alum.us.es
 deploy:
   - provider: heroku
-  app: fraperbardecide
-  strategy: git
-  api_key:
-    secure: U3X494Qs/pBZolcg76dopf4wCLRO8kfuXksP9O7xdziw8nnQIMxtmdUddACdZHh2tHPXPoYAWHnY1HgJA0WC8pJU1vulm/y9AS8B+pxix8HY23aNMPRmEcsZIM766OTuSOJMVN5bzHaYrwxnWc5reb8qnk3+TZKKrjX1xN2JlRW2wL7z/oqMctbIkH20JcZTeMRczahKCrRqXecjhvlgbw1BqZAKFAtxl/Jz2yWVhPhQHzKj3hilNWdR467P44N8oHnXGiNa+kpkKDL1+78LEsroVTuB7oaI0Li8Azba7rN7XbgYtOKyGrJZE5ioD+HaqROAaE+lzcfpBQ2Vwal0iOWO8KNbjo6DtmmaVNFxWzXuc7ZzxNHQbLIQjlEueTt/XXGg5nKOEOgE5vj/miHWS5N609qzKZ2oCXiwUeLymMh4eNlLVZNS4yYekIv9Si9jEc5V2lQe3Xe47exNnP6FaAf4YO4mWK390bbCZ0Kt4I1sgtHYP0oZHJQjngdtpxCHSvYZwMvM+gC25mlTEQeBate4p8YpgDUeHjzldxzt3zBaYHVaDSKmnbrOr95LsEqRbw3owbwnbW1Ej+f18abQ6/U9CBPXHuEzXie7LENA7XVO7Gc1EcXlNx/eL6lrCZYro+JSFAjJGQ4KDR7/M9r6tnKxosjnxmy/5JMp4B8Xcfo=
-  on: 
-    branch: master
+    app: fraperbardecide
+    strategy: git
+    api_key:
+      secure: U3X494Qs/pBZolcg76dopf4wCLRO8kfuXksP9O7xdziw8nnQIMxtmdUddACdZHh2tHPXPoYAWHnY1HgJA0WC8pJU1vulm/y9AS8B+pxix8HY23aNMPRmEcsZIM766OTuSOJMVN5bzHaYrwxnWc5reb8qnk3+TZKKrjX1xN2JlRW2wL7z/oqMctbIkH20JcZTeMRczahKCrRqXecjhvlgbw1BqZAKFAtxl/Jz2yWVhPhQHzKj3hilNWdR467P44N8oHnXGiNa+kpkKDL1+78LEsroVTuB7oaI0Li8Azba7rN7XbgYtOKyGrJZE5ioD+HaqROAaE+lzcfpBQ2Vwal0iOWO8KNbjo6DtmmaVNFxWzXuc7ZzxNHQbLIQjlEueTt/XXGg5nKOEOgE5vj/miHWS5N609qzKZ2oCXiwUeLymMh4eNlLVZNS4yYekIv9Si9jEc5V2lQe3Xe47exNnP6FaAf4YO4mWK390bbCZ0Kt4I1sgtHYP0oZHJQjngdtpxCHSvYZwMvM+gC25mlTEQeBate4p8YpgDUeHjzldxzt3zBaYHVaDSKmnbrOr95LsEqRbw3owbwnbW1Ej+f18abQ6/U9CBPXHuEzXie7LENA7XVO7Gc1EcXlNx/eL6lrCZYro+JSFAjJGQ4KDR7/M9r6tnKxosjnxmy/5JMp4B8Xcfo=
+    on: 
+      branch: master
   - provider: heroku
-  app: decidedevelop
-  strategy: git
-  api_key:
-    secure: U3X494Qs/pBZolcg76dopf4wCLRO8kfuXksP9O7xdziw8nnQIMxtmdUddACdZHh2tHPXPoYAWHnY1HgJA0WC8pJU1vulm/y9AS8B+pxix8HY23aNMPRmEcsZIM766OTuSOJMVN5bzHaYrwxnWc5reb8qnk3+TZKKrjX1xN2JlRW2wL7z/oqMctbIkH20JcZTeMRczahKCrRqXecjhvlgbw1BqZAKFAtxl/Jz2yWVhPhQHzKj3hilNWdR467P44N8oHnXGiNa+kpkKDL1+78LEsroVTuB7oaI0Li8Azba7rN7XbgYtOKyGrJZE5ioD+HaqROAaE+lzcfpBQ2Vwal0iOWO8KNbjo6DtmmaVNFxWzXuc7ZzxNHQbLIQjlEueTt/XXGg5nKOEOgE5vj/miHWS5N609qzKZ2oCXiwUeLymMh4eNlLVZNS4yYekIv9Si9jEc5V2lQe3Xe47exNnP6FaAf4YO4mWK390bbCZ0Kt4I1sgtHYP0oZHJQjngdtpxCHSvYZwMvM+gC25mlTEQeBate4p8YpgDUeHjzldxzt3zBaYHVaDSKmnbrOr95LsEqRbw3owbwnbW1Ej+f18abQ6/U9CBPXHuEzXie7LENA7XVO7Gc1EcXlNx/eL6lrCZYro+JSFAjJGQ4KDR7/M9r6tnKxosjnxmy/5JMp4B8Xcfo=
-  on: 
-    branch: develop
+    app: decidedevelop
+    strategy: git
+    api_key:
+      secure: U3X494Qs/pBZolcg76dopf4wCLRO8kfuXksP9O7xdziw8nnQIMxtmdUddACdZHh2tHPXPoYAWHnY1HgJA0WC8pJU1vulm/y9AS8B+pxix8HY23aNMPRmEcsZIM766OTuSOJMVN5bzHaYrwxnWc5reb8qnk3+TZKKrjX1xN2JlRW2wL7z/oqMctbIkH20JcZTeMRczahKCrRqXecjhvlgbw1BqZAKFAtxl/Jz2yWVhPhQHzKj3hilNWdR467P44N8oHnXGiNa+kpkKDL1+78LEsroVTuB7oaI0Li8Azba7rN7XbgYtOKyGrJZE5ioD+HaqROAaE+lzcfpBQ2Vwal0iOWO8KNbjo6DtmmaVNFxWzXuc7ZzxNHQbLIQjlEueTt/XXGg5nKOEOgE5vj/miHWS5N609qzKZ2oCXiwUeLymMh4eNlLVZNS4yYekIv9Si9jEc5V2lQe3Xe47exNnP6FaAf4YO4mWK390bbCZ0Kt4I1sgtHYP0oZHJQjngdtpxCHSvYZwMvM+gC25mlTEQeBate4p8YpgDUeHjzldxzt3zBaYHVaDSKmnbrOr95LsEqRbw3owbwnbW1Ej+f18abQ6/U9CBPXHuEzXie7LENA7XVO7Gc1EcXlNx/eL6lrCZYro+JSFAjJGQ4KDR7/M9r6tnKxosjnxmy/5JMp4B8Xcfo=
+    on: 
+      branch: develop
