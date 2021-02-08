@@ -25,6 +25,7 @@ notifications:
   email:
     recipients:
       - fraperbar@alum.us.es
+      - franperejonbarrios@gmail.com
 deploy:
   - provider: heroku
     app: fraperbardecide
