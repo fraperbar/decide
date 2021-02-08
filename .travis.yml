@@ -2,8 +2,8 @@ dist: xenial
 services:
 - postgresql
 env:
-  - DJANGO_VERSION=2.1.13
-  - DJANGO_VERSION=2.2.6
+  - DJANGO_VERSION=2.0
+  - DJANGO_VERSION=2.0.1
 addons:
   postgresql: '9.4'
 before_script:
