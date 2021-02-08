@@ -16,6 +16,11 @@ script:
 - cd decide
 - cp travis_local_settings.py local_settings.py
 - coverage run --branch --source=. ./manage.py test --keepdb
+notificiacions:
+  email:
+    recipients:
+      - franperejonbarrios@gmail.com
+      - fraperbar@alum.us.es
 deploy:
   - provider: heroku
   app: fraperbardecide
