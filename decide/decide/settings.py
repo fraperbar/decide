@@ -191,6 +191,6 @@ if os.path.exists("config.jsonnet"):
 
 
 INSTALLED_APPS = INSTALLED_APPS + MODULES
-#necesario para desplegar, no mover del final.
+#Necesario para desplegar, no mover del final.
 import django_heroku
 django_heroku.settings(locals())
