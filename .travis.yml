@@ -4,6 +4,7 @@ services:
 branches:
   only:
     - master
+    - ramaprueba
 env:
   - DJANGO_VERSION=2.0
   - DJANGO_VERSION=2.0.1
