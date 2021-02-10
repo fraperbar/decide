@@ -1,6 +1,9 @@
 dist: xenial
 services:
 - postgresql
+branches:
+  only:
+    - master
 env:
   - DJANGO_VERSION=2.0
   - DJANGO_VERSION=2.0.1
@@ -33,7 +36,7 @@ script:
 - cd decide
 - cp travis_settings.py settings.py
 - cd ..
-- coverage run --branch --source=. ./manage.py test --keepdb
+- coverage run --branch --source=. ./manage.py test mixnet --keepdb
 - coverage xml
 - python-codacy-coverage -r coverage.xml
 notifications:
